@@ -29,7 +29,7 @@ export class HeroService {
     this.messageService.add('HeroService: ' + message);
   }
 
-  getHeroes(): Observable<{} | Hero[]> {
+  getHeroes(): Observable<Hero[]> {
     // this.messageService.add('HeroService: fetched heroes');
     // return of(HEROES);
     return this.http.get<Hero[]>(this.heroesUrl)
