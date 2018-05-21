@@ -1,0 +1,14 @@
+<div class="container color-dark" *ngIf="hero">
+  <div class="col">
+    <p>#{{hero.id}} {{ hero.name | uppercase}} Details</p>
+  </div>
+</div>
+<div class="color-light" *ngIf="hero">
+  <div class="col">
+      <input [(ngModel)]="hero.name" placeholder="name" id="search-box" autocomplete="off" />
+      <div class="container">
+        <div><input type="button" class="btn-cancel" value="Voltar" (click)="goBack()"></div>
+        <div><input type="button" class="btn-update" value="Alterar" (click)="save()"></div>
+      </div>
+  </div>
+</div>

@@ -1,89 +1,190 @@
-/* You can add global styles to this file, and also import other style files */
-/* Master Styles */
-
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
-}
-
-h2,
-h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
-}
+// @import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
 
 body {
-  margin: 2em;
+    background:#2E9CE6;
+    padding: 3em;
+    font-family: 'Raleway', 'Arial';
+    color:#fff;
 }
-
-body,
-input[text],
-button {
-  color: #888;
-  font-family: Cambria, Georgia;
+ul {
+    list-style-type:none;
+    margin:0 0 2em 0;
+    padding:0;
 }
-
+ul li {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+.menu li {
+  display:inline;
+  margin-right: 30px;
+}
+.menu li a {
+    font-size: 1.5em;
+}
 a {
+    color:#fff;
+    text-decoration:none;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 50% auto;
+}
+.col {
+    padding: .4em 1.3em;
+}
+.color-dark {
+    background: #2885C4;
+}
+.color-light {
+    background: #57B3F1;
+}
+
+input.txt {
+    border: 0;
+    padding: 1em;
+    width: 80%;
+    margin-bottom: 2em;
+}
+button.btn-save {
+    border: 0;
+    display:block;
+    padding:1em 3em;
+    background:#A5F883;
+    color:#003A61;
+    margin-bottom:1em;
+    cursor:pointer;
+}
+input.btn-cancel {
+    border: 0;
+    display:block;
+    padding:1em 3em;
+    background:#ffeb3b;
+    color:#003A61;
+    margin-bottom:1em;
+    cursor:pointer;
+}
+input.btn-update {
+    border: 0;
+    display:block;
+    padding:1em 3em;
+    background:#A5F883;
+    color:#003A61;
+    margin-bottom:1em;
+    float: right;
+    cursor:pointer;
+}
+input.btn-delete {
+    border: 0;
+    display:block;
+    padding:1em 3em;
+    background:#f44336;
+    color:#dadada;
+    margin-bottom:1em;
+    float: right;
+    cursor:pointer;
+}
+.life-container {
+    background:#3FA0E1;
+    padding:.5em;
+    font-weight:bold;
+    // cursor:pointer;
+}
+
+#search-box {
+  position: relative;
+  border: 0;
+  padding: 1em;
+  width: 100%;
+  margin-bottom: 2em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;  
+}
+
+ul.search-result {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
+.heroes li {
   cursor: pointer;
-  cursor: hand;
+  position: relative;
+  left: 0;
+  background-color: #eee;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+
+.heroes li:hover {
+  color: #607d8b;
+  background-color: #ddd;
+  left: .1em;
+}
+
+.heroes a {
+  color: #888;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 250px;
+}
+
+.heroes a:hover {
+  color: #607d8b;
+}
+
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607d8b;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  min-width: 16px;
+  text-align: right;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
 }
 
 button {
-  font-family: Arial;
   background-color: #eee;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
   cursor: hand;
+  font-family: Arial;
 }
 
 button:hover {
   background-color: #cfd8dc;
 }
 
-button:disabled {
-  background-color: #eee;
-  color: #aaa;
-  cursor: auto;
+button.delete {
+  color:#dadada;
+  background: #f44336;
+  float: right;
+  position: relative;
+  top: -3px;
+  // left: 194px;
+  // background-color: gray !important;
+  // color:white;
 }
-
-/* Navigation link styles */
-
-nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-right: 10px;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
-}
-
-nav a:visited,
-a:link {
-  color: #607D8B;
-}
-
-nav a:hover {
-  color: #039be5;
-  background-color: #CFD8DC;
-}
-
-nav a.active {
-  color: #039be5;
-}
-
-/* everywhere else */
-
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/*
-Copyright 2017-2018 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
