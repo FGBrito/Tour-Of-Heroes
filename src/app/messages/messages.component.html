@@ -1,5 +1,18 @@
-<div *ngIf="messageService.messages.length">
-  <h2>Messages</h2>
-  <button class="clear" (click)="messageService.clear()">Clear</button>
-  <div *ngFor="let message of messageService.messages">{{message}}</div>
+<div class="container color-dark" style="margin-top: 15px">
+  <div class="col">
+    <p>Messages</p>
+  </div>
+  <div class="col">
+    <input type="button" class="btn-delete" value="Limpar" (click)="messageService.clear()" *ngIf="messageService.messages.length">
+  </div>
+</div>
+<div class="color-light">
+  <div class="col">
+    <p class="life-container" *ngFor="let message of messageService.messages; let i = index">
+      {{'#'+(i+1)+' - '+message}}
+    </p>
+    <p class="life-container" *ngIf="messageService.messages.length === 0">
+        No there are messages
+      </p>
+  </div>
 </div>

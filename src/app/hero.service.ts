@@ -5,7 +5,6 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of } from "rxjs";
 
 import { Hero } from "./hero";
-import { HEROES } from "./mock-heroes";
 import { MessageService } from "./message.service";
 import { createChangeDetectorRef } from '@angular/core/src/view/refs';
 
@@ -30,8 +29,6 @@ export class HeroService {
   }
 
   getHeroes(): Observable<Hero[]> {
-    // this.messageService.add('HeroService: fetched heroes');
-    // return of(HEROES);
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
         tap(heroes => this.log(`fetched heroes`)),
@@ -48,9 +45,6 @@ export class HeroService {
   }
 
   getHero(id: number): Observable<Hero> {
-    console.log('estou fla');
-    // this.messageService.add(`HeroService: fetched hero id=${id}`);
-    // return of(HEROES.find(hero => hero.id === id))
     const url = `${this.heroesUrl}/${id}`;
     return this.http.get<Hero>(url).pipe(
       tap(_ => this.log(`fetched hero id=${id}`)),

@@ -1,11 +1,13 @@
 <div id="search-component">
-  <h4>Hero Search</h4>
-  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <p class="sm">Use this form below to search a hero</p>
+  <div style="width: 100%; position: relative">
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="Search a hero"  autocomplete="off" />
+  </div>
   <ul class="search-result">
-    <li *ngFor="let hero of heroes$ | async">
-      <a routerLink="/detail/{{hero.id}}">
-        {{hero.name}}
-      </a>
+    <li class="life-container" *ngFor="let hero of heroes$ | async">
+        <a routerLink="/heroes/{{hero.id}}">
+          {{hero.name}}
+        </a>
     </li>
   </ul>
 </div>

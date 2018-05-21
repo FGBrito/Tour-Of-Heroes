@@ -1,10 +1,22 @@
-<h3>Top Heroes</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let hero of heroes" class="col-1-4" routerLink="/detail/{{hero.id}}">
-    <div class="module hero">
-      <h4>{{hero.name}}</h4>
-    </div>
-  </a>
+<div class="container color-dark">
+  <div class="col">
+    <p>Search Hero</p>
+  </div>
+  <div class="col">
+    <p>Your hero list</p>
+  </div>
 </div>
-
-<app-hero-search></app-hero-search>
+<div class="container color-light" [@heroes]="heroes.length">
+  <div class="col">
+    <form>
+      <app-hero-search></app-hero-search>
+    </form>
+  </div>
+  <div class="col">
+    <p class="life-container" *ngFor="let hero of heroes">
+      <a routerLink="/heroes/{{hero.id}}">
+         {{hero.name}}
+      </a>
+    </p>
+  </div>
+</div>
